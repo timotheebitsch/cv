@@ -11,6 +11,25 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="style.css" >
 		<script  type="text/javascript" src="cv.js"></script>
+		<script language="javascript" type="text/javascript">
+		function validation() {
+		var contenu_email = $('#email').val();
+		var contenu_telephone = $('#tel').val();
+		//valider_email(contenu_email);
+		valider_telephone(contenu_telephone);
+		}
+		function valider_email(contenu_email){
+			if(!contenu_email.includes("@")){
+				window.alert("erreur");
+			}
+		
+		}
+		function valider_telephone(contenu_telephone){
+			if(contenu_telephone.length != 10){
+				window.alert("erreur");
+			}
+		}
+		</script>
 		
 		
 	</head>
@@ -32,7 +51,7 @@
 					</div>
 					
 					<div class="col-md-4">
-						<h2>Sommaire <button style="font-size: 50%;" onclick="afficher('#sommaire');">cacher</button></h2>
+						<h3>Sommaire <button style="font-size: 50%;" onclick="afficher('#sommaire');">cacher</button></h4>
 						<div id="sommaire">
 							<a href="#formations">Formations </a><br/>
 							<a href="#experiences">Experiences </a><br/>
@@ -79,6 +98,33 @@
 							</ul>
 						</div>
 					</div>					
+				</div>
+				<div  class="col-md-4">
+				<h2> Formulaire </h2>
+				<div id="formulaire">
+					<form>
+						<div>
+							<label for="nom">Nom :</label>
+							<input type="text" id="nom" />
+						</div>
+						<div>
+							<label for="email">E-Mail :</label>
+							<input type="email" id="courriel" />
+						</div>
+						<div>
+							<label for="tel">telephone :</label>
+							<input type="phone" id="tel" />
+						</div>
+						<div>
+							<label for="message">Message :</label>
+							<textarea id="message"></textarea>
+						</div>
+    
+						<div class="button">
+							<button onclick="validation();">Envoyer votre message</button>
+						</div>
+					</form>
+				</div>
 				</div>
 	</body>
 </html>
